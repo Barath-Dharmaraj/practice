@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibrant Project Dashboard</title>
+    <style>
+        /* Base Reset & Vibrant Gradient Background */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        p { font-size: 1.2rem; line-height: 1.6; opacity: 0.9; margin-bottom: 30px; }
+
+        /* Colorful Feature Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { margin-bottom: 10px; color: #ff9a9e; }
+
+        /* Action Button with Gradient */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 40px;
+            background: linear-gradient(to right, #ff0844 0%, #ffb199 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 8, 68, 0.4);
+        }
+        .btn:hover { transform: scale(1.05); filter: brightness(1.1); }
+    </style>
+</head>
+<body>
+
+    <div class="glass-container">
+        <h1>Welcome to the Future</h1>
+        <p>A colorful, big, and bold layout built directly for your Docker container. This template uses CSS gradients and backdrop filters to create a modern aesthetic.</p>
+        
+        <div class="grid">
+            <div class="card">
+                <h3 style="color: #4facfe;">Speed</h3>
+                <p>Built with Nginx for lightning-fast delivery.</p>
+            </div>
+            <div class="card">
+                <h3 style="color: #43e97b;">Design</h3>
+                <p>Clean glassmorphism effects for every device.</p>
+            </div>
+            <div class="card">
+                <h3 style="color: #fa709a;">Docker</h3>
+                <p>Containerized and ready to deploy anywhere.</p>
+            </div>
+        </div>
+
+        <a href="#" class="btn">Explore More</a>
+    </div>
+
+</body>
+</html>
