@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: colorful-web-deployment
+spec:
+  replicas: 2 # Runs two copies of your site for reliability
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: colorful-web
+        image: colorful-web:latest # Must match the tag you used in 'docker build'
+        imagePullPolicy: IfNotPresent # Tells K8s to look for the local image you built
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+spec:
+  type: NodePort # Allows access from outside the cluster
+  selector:
+    app: web
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080 # This is the port you will visit in your browser
